@@ -18,9 +18,7 @@ import XCTest
 @testable import RQESLib
 
 final class CalculateHashTests: XCTestCase {
-    
-    // MARK: - CalculateHashRequest Tests
-    
+
     func testCalculateHashRequestJSONDecoding() throws {
         let data = TestConstants.calculateHashRequest.data(using: .utf8)!
         let request = try JSONDecoder().decode(CalculateHashRequest.self, from: data)
@@ -128,8 +126,7 @@ final class CalculateHashTests: XCTestCase {
     func testCalculateHashRequestCodingKeys() throws {
         let data = TestConstants.calculateHashRequest.data(using: .utf8)!
         let request = try JSONDecoder().decode(CalculateHashRequest.self, from: data)
-        
-        // Test that all required keys are mapped correctly
+
         let encoded = try JSONEncoder().encode(request)
         let json = try JSONSerialization.jsonObject(with: encoded) as! [String: Any]
         
@@ -144,9 +141,7 @@ final class CalculateHashTests: XCTestCase {
         XCTAssertNotNil(document["conformance_level"])
         XCTAssertNotNil(document["signed_envelope_property"])
     }
-    
-    // MARK: - DocumentDigests Tests
-    
+
     func testDocumentDigestsJSONDecoding() throws {
         let data = TestConstants.documentDigestsResponse.data(using: .utf8)!
         let response = try JSONDecoder().decode(DocumentDigests.self, from: data)
@@ -191,9 +186,7 @@ final class CalculateHashTests: XCTestCase {
         XCTAssertEqual(response.hashes.count, 3)
         XCTAssertEqual(response.hashes, hashes)
     }
-    
-    // MARK: - CalculateHashError Tests
-    
+
     func testCalculateHashErrorCases() {
         let missingDocuments = CalculateHashError.missingDocuments
         let invalidDocument = CalculateHashError.invalidDocument
@@ -202,8 +195,7 @@ final class CalculateHashTests: XCTestCase {
         let missingHashAlgorithmID = CalculateHashError.missingHashAlgorithmID
         let missingTsaURL = CalculateHashError.missingTsaURL(conformanceLevel: "ADES_B_LT")
         let hashCalculationError = CalculateHashError.hashCalculationError(documentPath: "/path/to/doc.pdf")
-        
-        // Test that all cases can be created
+
         XCTAssertNotNil(missingDocuments)
         XCTAssertNotNil(invalidDocument)
         XCTAssertNotNil(missingEndEntityCertificate)
@@ -216,8 +208,7 @@ final class CalculateHashTests: XCTestCase {
     func testCalculateHashErrorLocalizedDescription() {
         let missingTsaError = CalculateHashError.missingTsaURL(conformanceLevel: "ADES_B_LT")
         XCTAssertEqual(missingTsaError.errorDescription, "For conformance level “ADES_B_LT” you must provide a TSR_URL.")
-        
-        // Other errors should return nil for errorDescription
+
         XCTAssertNil(CalculateHashError.missingDocuments.errorDescription)
         XCTAssertNil(CalculateHashError.invalidDocument.errorDescription)
         XCTAssertNil(CalculateHashError.missingEndEntityCertificate.errorDescription)
@@ -225,20 +216,14 @@ final class CalculateHashTests: XCTestCase {
         XCTAssertNil(CalculateHashError.missingHashAlgorithmID.errorDescription)
         XCTAssertNil(CalculateHashError.hashCalculationError(documentPath: "test.pdf").errorDescription)
     }
-    
-    // MARK: - CalculateHashValidator Tests
-    
+
     func testValidateValidRequest() throws {
         let request = TestConstants.standardCalculateHashRequest
-        
-        // Should not throw for valid request
         try CalculateHashValidator.validate(request: request)
     }
     
     func testValidateMinimalValidRequest() throws {
         let request = TestConstants.minimalCalculateHashRequestObject
-        
-        // Should not throw for minimal valid request
         try CalculateHashValidator.validate(request: request)
     }
     
@@ -387,8 +372,8 @@ final class CalculateHashTests: XCTestCase {
             certificateChain: ["CERT1", "CERT2", "ROOT_CERT"],
             hashAlgorithmOID: HashAlgorithmOID(rawValue: "2.16.840.1.101.3.4.2.3")
         )
-        
-        // Should not throw for complex valid request
+
         try CalculateHashValidator.validate(request: request)
     }
 } 
+ 

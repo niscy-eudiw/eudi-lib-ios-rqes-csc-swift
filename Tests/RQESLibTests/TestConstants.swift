@@ -81,13 +81,13 @@ struct PoDoFoTestConstants {
           },
           "lang" : "en-US"
         }
-      ],
-      "onlyValid" : false,
-      "credentialIDs" : [
+        ],
+        "onlyValid" : false,
+        "credentialIDs" : [
         "662e92ed-cbeb-4d4f-9a46-8fc4df3cea85"
-      ]
-    }
-    """
+        ]
+        }
+        """
     }
     
     struct SigningData {
@@ -306,8 +306,8 @@ struct TestConstants {
           "cert" : {
             "serialNumber" : "184966370757515800362535864175063713398032096472",
             "certificates" : [
-              "MIICmDCCAh+gAwIBAgIUIGYtzcs9IBXguB9P0riuz8l+3NgwCgYIKoZIzj0EAwIwXDEeMBwGA1UEAwwVUElEIElzc3VlciBDQSAtIFVUIDAxMS0wKwYDVQQKDCRFVURJIFdhbGxldCBSZWZlcmVuY2UgSW1wbGVtZW50YXRpb24xCzAJBgNVBAYTAlVUMB4XDTI1MDMyMTIyMDUxM1oXDTI3MDMyMTIyMDUxMlowVTEdMBsGA1UEAwwURmlyc3ROYW1lIFRlc3RlclVzZXIxEzARBgNVBAQMClRlc3RlclVzZXIxEjAQBgNVBCoMCUZpcnN0TmFtZTELMAkGA1UEBhMCRkMwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAATKfz322k66qo078TlOuj7DnCIysLH4Luq/rJXNXtlS5WvGOVNIc95blK/XRIgx8/Q0SYHrXwumDOaJxKZzs222o4HFMIHCMAwGA1UdEwEB/wQCMAAwHwYDVR0jBBgwFoAUs2y4kRcc16QaZjGHQuGLwEDMlRswHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUFBwMEMEMGA1UdHwQ8MDowOKA2oDSGMmh0dHBzOi8vcHJlcHJvZC5wa2kuZXVkaXcuZGV2L2NybC9waWRfQ0FfVVRfMDEuY3JsMB0GA1UdDgQWBBRwUXIdDj4Rr+AfehggZXvcNj9wUTAOBgNVHQ8BAf8EBAMCBkAwCgYIKoZIzj0EAwIDZwAwZAIwUH8UEK/Vc+EDC4ZrRwBPpOCeJC5+9pky0hIyghFpaAOFUSsrqFjRxF9BlP/p1kNmAjA3B8sBJKNnlyEEHd0h+E6gaj5p/rgzj+kVX/30h8oZtAMpe1oamOGYhoLiZwmJH7Y=",
-              "MIIDHTCCAqOgAwIBAgIUVqjgtJqf4hUYJkqdYzi+0xwhwFYwCgYIKoZIzj0EAwMwXDEeMBwGA1UEAwwVUElEIElzc3VlciBDQSAtIFVUIDAxMS0wKwYDVQQKDCRFVURJIFdhbGxldCBSZWZlcmVuY2UgSW1wbGVtZW50YXRpb24xCzAJBgNVBAYTAlVUMB4XDTIzMDkwMTE4MzQxN1oXDTMyMTEyNzE4MzQxNlowXDEeMBwGA1UEAwwVUElEIElzc3VlciBDQSAtIFVUIDAxMS0wKwYDVQQKDCRFVURJIFdhbGxldCBSZWZlcmVuY2UgSW1wbGVtZW50YXRpb24xCzAJBgNVBAYTAlVUMHYwEAYHKoZIzj0CAQYFK4EEACIDYgAEFg5Shfsxp5R/UFIEKS3L27dwnFhnjSgUh2btKOQEnfb3doyeqMAvBtUMlClhsF3uefKinCw08NB31rwC+dtj6X/LE3n2C9jROIUN8PrnlLS5Qs4Rs4ZU5OIgztoaO8G9o4IBJDCCASAwEgYDVR0TAQH/BAgwBgEB/wIBADAfBgNVHSMEGDAWgBSzbLiRFxzXpBpmMYdC4YvAQMyVGzAWBgNVHSUBAf8EDDAKBggrgQICAAABBzBDBgNVHR8EPDA6MDigNqA0hjJodHRwczovL3ByZXByb2QucGtpLmV1ZGl3LmRldi9jcmwvcGlkX0NBX1VUXzAxLmNybDAdBgNVHQ4EFgQUs2y4kRcc16QaZjGHQuGLwEDMlRswDgYDVR0PAQH/BAQDAgEGMF0GA1UdEgRWMFSGUmh0dHBzOi8vZ2l0aHViLmNvbS9ldS1kaWdpdGFsLWlkZW50aXR5LXdhbGxldC9hcmNoaXRlY3R1cmUtYW5kLXJlZmVyZW5jZS1mcmFtZXdvcmswCgYIKoZIzj0EAwMDaAAwZQIwaXUA3j++xl/tdD76tXEWCikfM1CaRz4vzBC7NS0wCdItKiz6HZeV8EPtNCnsfKpNAjEAqrdeKDnr5Kwf8BA7tATehxNlOV4Hnc10XO1XULtigCwb49RpkqlS2Hul+DpqObUs"
+              "MIICmDCCAh+gAwIBAgIUIGYtzcs9IBXguB9P0riuz8l+3NgwCgYIKoZIzj0EAwIwXDEeMBwGA1UEAwwVUElEIElzc3VlciBDQSAtIFVUIDAxMS0wKwYDVQQKDCRFVURJIFdhbGxldCBSZWZlcmVuY2UgSW1wbGVtZW50YXRpb24xCzAJBgNVBAYTAlVUMB4XDTI1MDMyMTIyMDUxM1oXDTI3MDMyMTIyMDUxMlowVTEdMBsGA1UEAwwURmlyc3ROYW1lIFRlc3RlclVzZXIxEzARBgNVBAQMClRlc3RlclVzZXIxEjAQBgNVBCoMCUZpcnN0TmFtZTELMAkGA1UEBhMCRkMwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAATKfz322k66qo078TlOuj7DnCIysLH4Luq\\/rJXNXtlS5WvGOVNIc95blK\\/XRIgx8\\/Q0SYHrXwumDOaJxKZzs222o4HFMIHCMAwGA1UdEwEB\\/wQCMAAwHwYDVR0jBBgwFoAUs2y4kRcc16QaZjGHQuGLwEDMlRswHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUFBwMEMEMGA1UdHwQ8MDowOKA2oDSGMmh0dHBzOi8vcHJlcHJvZC5wa2kuZXVkaXcuZGV2L2NybC9waWRfQ0FfVVRfMDEuY3JsMB0GA1UdDgQWBBRwUXIdDj4Rr+AfehggZXvcNj9wUTAOBgNVHQ8BAf8EBAMCBkAwCgYIKoZIzj0EAwIDZwAwZAIwUH8UEK\\/Vc+EDC4ZrRwBPpOCeJC5+9pky0hIyghFpaAOFUSsrqFjRxF9BlP\\/p1kNmAjA3B8sBJKNnlyEEHd0h+E6gaj5p\\/rgzj+kVX\\/30h8oZtAMpe1oamOGYhoLiZwmJH7Y=",
+              "MIIDHTCCAqOgAwIBAgIUVqjgtJqf4hUYJkqdYzi+0xwhwFYwCgYIKoZIzj0EAwMwXDEeMBwGA1UEAwwVUElEIElzc3VlciBDQSAtIFVUIDAxMS0wKwYDVQQKDCRFVURJIFdhbGxldCBSZWZlcmVuY2UgSW1wbGVtZW50YXRpb24xCzAJBgNVBAYTAlVUMB4XDTIzMDkwMTE4MzQxN1oXDTMyMTEyNzE4MzQxNlowXDEeMBwGA1UEAwwVUElEIElzc3VlciBDQSAtIFVUIDAxMS0wKwYDVQQKDCRFVURJIFdhbGxldCBSZWZlcmVuY2UgSW1wbGVtZW50YXRpb24xCzAJBgNVBAYTAlVUMHYwEAYHKoZIzj0CAQYFK4EEACIDYgAEFg5Shfsxp5R\\/UFIEKS3L27dwnFhnjSgUh2btKOQEnfb3doyeqMAvBtUMlClhsF3uefKinCw08NB31rwC+dtj6X\\/LE3n2C9jROIUN8PrnlLS5Qs4Rs4ZU5OIgztoaO8G9o4IBJDCCASAwEgYDVR0TAQH\\/BAgwBgEB\\/wIBADAfBgNVHSMEGDAWgBSzbLiRFxzXpBpmMYdC4YvAQMyVGzAWBgNVHSUBAf8EDDAKBggrgQICAAABBzBDBgNVHR8EPDA6MDigNqA0hjJodHRwczovL3ByZXByb2QucGtpLmV1ZGl3LmRldi9jcmwvcGlkX0NBX1VUXzAxLmNybDAdBgNVHQ4EFgQUs2y4kRcc16QaZjGHQuGLwEDMlRswDgYDVR0PAQH\\/BAQDAgEGMF0GA1UdEgRWMFSGUmh0dHBzOi8vZ2l0aHViLmNvbS9ldS1kaWdpdGFsLWlkZW50aXR5LXdhbGxldC9hcmNoaXRlY3R1cmUtYW5kLXJlZmVyZW5jZS1mcmFtZXdvcmswCgYIKoZIzj0EAwMDaAAwZQIwaXUA3j++xl\\/tdD76tXEWCikfM1CaRz4vzBC7NS0wCdItKiz6HZeV8EPtNCnsfKpNAjEAqrdeKDnr5Kwf8BA7tATehxNlOV4Hnc10XO1XULtigCwb49RpkqlS2Hul+DpqObUs"
             ],
             "validFrom" : "20250321220513Z",
             "validTo" : "20270321220512Z",
@@ -358,8 +358,8 @@ struct TestConstants {
         "subjectDN" : "C=FC, GIVENNAME=FirstName, SURNAME=TesterUser, CN=FirstName TesterUser",
         "validTo" : "20270321220512Z",
         "certificates" : [
-          "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"
+          "MIICmDCCAh+gAwIBAgIUIGYtzcs9IBXguB9P0riuz8l+3NgwCgYIKoZIzj0EAwIwXDEeMBwGA1UEAwwVUElEIElzc3VlciBDQSAtIFVUIDAxLS0wKwYDVQQKDCRFVURJIFdhbGxldCBSZWZlcmVuY2UgSW1wbGVtZW50YXRpb24xCzAJBgNVBAYTAlVUMB4XDTI1MDMyMTIyMDUxM1oXDTI3MDMyMTIyMDUxMlowVTEdMBsGA1UEAwwURmlyc3ROYW1lIFRlc3RlclVzZXIxEzARBgNVBAQMClRlc3RlclVzZXIxEjAQBgNVBCoMCUZpcnN0TmFtZTELMAkGA1UEBhMCRkMwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAATKfz322k66qo078TlOuj7DnCIysLH4Luq\\/rJXNXtlS5WvGOVNIc95blK\\/XRIgx8\\/Q0SYHrXwumDOaJxKZzs222o4HFMIHCMAwGA1UdEwEB\\/wQCMAAwHwYDVR0jBBgwFoAUs2y4kRcc16QaZjGHQuGLwEDMlRswHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUFBwMEMEMGA1UdHwQ8MDowOKA2oDSGMmh0dHBzOi8vcHJlcHJvZC5wa2kuZXVkaXcuZGV2L2NybC9waWRfQ0FfVVRfMDEuY3JsMB0GA1UdDgQWBBRwUXIdDj4Rr+AfehggZXvcNj9wUTAOBgNVHQ8BAf8EBAMCBkAwCgYIKoZIzj0EAwIDZwAwZAIwUH8UEK\\/Vc+EDC4ZrRwBPpOCeJC5+9pky0hIyghFpaAOFUSsrqFjRxF9BlP\\/p1kNmAjA3B8sBJKNnlyEEHd0h+E6gaj5p\\/rgzj+kVX\\/30h8oZtAMpe1oamOGYhoLiZwmJH7Y=",
+          "MIIDHTCCAqOgAwIBAgIUVqjgtJqf4hUYJkqdYzi+0xwhwFYwCgYIKoZIzj0EAwMwXDEeMBwGA1UEAwwVUElEIElzc3VlciBDQSAtIFVUIDAxMS0wKwYDVQQKDCRFVURJIFdhbGxldCBSZWZlcmVuY2UgSW1wbGVtZW50YXRpb24xCzAJBgNVBAYTAlVUMB4XDTIzMDkwMTE4MzQxN1oXDTMyMTEyNzE4MzQxNlowXDEeMBwGA1UEAwwVUElEIElzc3VlciBDQSAtIFVUIDAxMS0wKwYDVQQKDCRFVURJIFdhbGxldCBSZWZlcmVuY2UgSW1wbGVtZW50YXRpb24xCzAJBgNVBAYTAlVUMHYwEAYHKoZIzj0CAQYFK4EEACIDYgAEFg5Shfsxp5R\\/UFIEKS3L27dwnFhnjSgUh2btKOQEnfb3doyeqMAvBtUMlClhsF3uefKinCw08NB31rwC+dtj6X\\/LE3n2C9jROIUN8PrnlLS5Qs4Rs4ZU5OIgztoaO8G9o4IBJDCCASAwEgYDVR0TAQH\\/BAgwBgEB\\/wIBADAfBgNVHSMEGDAWgBSzbLiRFxzXpBpmMYdC4YvAQMyVGzAWBgNVHSUBAf8EDDAKBggrgQICAAABBzBDBgNVHR8EPDA6MDigNqA0hjJodHRwczovL3ByZXByb2QucGtpLmV1ZGl3LmRldi9jcmwvcGlkX0NBX1VUXzAxLmNybDAdBgNVHQ4EFgQUs2y4kRcc16QaZjGHQuGLwEDMlRswDgYDVR0PAQH\\/BAQDAgEGMF0GA1UdEgRWMFSGUmh0dHBzOi8vZ2l0aHViLmNvbS9ldS1kaWdpdGFsLWlkZW50aXR5LXdhbGxldC9hcmNoaXRlY3R1ymUtYW5kLXJlZmVyZW5jZS1mcmFtZXdvcmswCgYIKoZIzj0EAwMDaAAwZQIwaXUA3j++xl\\/tdD76tXEWCikfM1CaRz4vzBC7NS0wCdItKiz6HZeV8EPtNCnsfKpNAjEAqrdeKDnr5Kwf8BA7tATehxNlOV4Hnc10XO1XULtigCwb49RpkqlS2Hul+DpqObUs"
         ],
         "issuerDN" : "C=UT, O=EUDI Wallet Reference Implementation, CN=PID Issuer CA - UT 01",
         "status" : "valid"
@@ -757,9 +757,7 @@ struct TestConstants {
         }
         """
     }
-    
-    // MARK: - Calculate Hash Test Constants
-    
+
     static let calculateHashRequest = """
     {
       "endEntityCertificate" : "MIICmDCCAh+gAwIBAgIUIGYtzcs9IBXguB9P0riuz8l+3NgwCgYIKoZIzj0EAwIwXDEeMBwGA1UEAwwVUElEIElzc3VlciBDQSAtIFVUIDAxMS0wKwYDVQQKDCRFVURJIFdhbGxldCBSZWZlcmVuY2UgSW1wbGVtZW50YXRpb24xCzAJBgNVBAYTAlVUMB4XDTI1MDMyMTIyMDUxM1oXDTI3MDMyMTIyMDUxMlowVTEdMBsGA1UEAwwURmlyc3ROYW1lIFRlc3RlclVzZXIxEzARBgNVBAQMClRlc3RlclVzZXIxEjAQBgNVBCoMCUZpcnN0TmFtZTELMAkGA1UEBhMCRkMwWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAATKfz322k66qo078TlOuj7DnCIysLH4Luq\\/rJXNXtlS5WvGOVNIc95blK\\/XRIgx8\\/Q0SYHrXwumDOaJxKZzs222o4HFMIHCMAwGA1UdEwEB\\/wQCMAAwHwYDVR0jBBgwFoAUs2y4kRcc16QaZjGHQuGLwEDMlRswHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUFBwMEMEMGA1UdHwQ8MDowOKA2oDSGMmh0dHBzOi8vcHJlcHJvZC5wa2kuZXVkaXcuZGV2L2NybC9waWRfQ0FfVVRfMDEuY3JsMB0GA1UdDgQWBBRwUXIdDj4Rr+AfehggZXvcNj9wUTAOBgNVHQ8BAf8EBAMCBkAwCgYIKoZIzj0EAwIDZwAwZAIwUH8UEK\\/Vc+EDC4ZrRwBPpOCeJC5+9pky0hIyghFpaAOFUSsrqFjRxF9BlP\\/p1kNmAjA3B8sBJKNnlyEEHd0h+E6gaj5p\\/rgzj+kVX\\/30h8oZtAMpe1oamOGYhoLiZwmJH7Y=",
@@ -856,8 +854,7 @@ struct TestConstants {
       "hashes" : []
     }
     """
-    
-    // Calculate Hash Request objects
+
     static let standardCalculateHashRequest = CalculateHashRequest(
         documents: [
             CalculateHashRequest.Document(
@@ -889,4 +886,168 @@ struct TestConstants {
         certificateChain: ["CERT1"],
         hashAlgorithmOID: HashAlgorithmOID(rawValue: "2.16.840.1.101.3.4.2.1")
     )
+
+    static let accessTokenRequestJSON = """
+    {
+      "state" : "BB94593E-79FF-4BBE-8549-1A20E9D99677",
+      "code" : "XpOL_9gBQ4OczsEPvEL2atWb64WdvA_pCladM5ergCfegJD3RRXnqpqOBMCKNQ-RAAuoeynkSn6jE_fwFY5res9QmZJIC39z_k4G3-ZoIyJ2VZ13uPhQbJnoH4u_3DV0"
+    }
+    """
+    
+    static let accessTokenResponseJSON = """
+    {
+      "scope" : "service",
+      "access_token" : "eyJraWQiOiI1NmI1YjZmYi03N2JhLTRmY2QtODVlZi0yMjc3ZTA0MWI5ZDgiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiI4UGZDQVF6VG1PTitGSER2SDRHVy9nK0pVdGc1ZVZUZ3RxTUtaRmRCLytjPSIsImF1ZCI6IndhbGxldC1jbGllbnQiLCJuYmYiOjE3NTM0OTA1NDAsInN1cm5hbWUiOiJNT2U5VFZSbEZ0YklVWVc2U1AzR0pvR2pCQURkaGRoTlF1R0crSXNxQnJwZDNjUVFGakk9IiwiaXNzdWluZ0NvdW50cnkiOiJGQyIsInNjb3BlIjpbInNlcnZpY2UiXSwiZ2l2ZW5OYW1lIjoiWHVOY3ExVGl3Ky9ubWg2SG5VaHR5M3ZoUGZHbDRKN281Z0VUSFR2b0sveXVrczFmbWc9PSIsImlzcyI6Imh0dHBzOi8vd2FsbGV0Y2VudHJpYy5zaWduZXIuZXVkaXcuZGV2IiwiZXhwIjoxNzUzNDkwODQwLCJpYXQiOjE3NTM0OTA1NDAsImp0aSI6ImMyZDQzYzNkLTYzMjgtNGE3NS1hMzA5LTdhYmNmZjgwYTRiMyJ9.c_ODfYYCuL5zhWzfcOPG2jrMRuPneoycGWBy25ljr_aw5R2w5j_B2m_AnIYCeTTxlBt2T47bqAONd6rfIdTgZjWcNnVCdVgqbtJ4a0z2qjdqZxL3bmvAduLWxXiM6qvwxLod0_6BPs4SF4Y1l7IAA8YS1T45pQYiUXioFmgxU1R1JxGh73mHa-YSoktuF7K5HLymJYXZQ7UbULm9WX1ZTxRSw48C2Gn1MSaxGj6NfVNdjLKR0F05gVzzCT84xqilcQifeYeefEPxzq429R5hrjuDf1Z02BfFIX4DDhgG2hJwZm9ZS1pstAus379iNQU-L_0x6eBqf5ML-3JJlDCcZA",
+      "token_type" : "Bearer",
+      "expires_in" : 3599
+    }
+    """
+    
+    static let credentialAccessTokenRequestJSON = """
+    {
+      "authorizationDetails" : "[{\\"locations\\":[],\\"hashAlgorithmOID\\":\\"2.16.840.1.101.3.4.2.1\\",\\"credentialID\\":\\"662e92ed-cbeb-4d4f-9a46-8fc4df3cea85\\",\\"documentDigests\\":[{\\"hash\\":\\"lV0XaRwZvitkgxpR6WSaqd6yLK9gcWFqXl4JeP1TIzL%2FPdppaQ0Lsc4c979Nb5gPunELwjjZwfyRv9xW0kMn%2FA%3D%3D\\",\\"label\\":\\"A sample1 pdf\\"}],\\"type\\":\\"credential\\"}]",
+      "state" : "BB94593E-79FF-4BBE-8549-1A20E9D99677",
+      "code" : "TjTlT5hNRGoIRgbiAklj8cK3bCwbhOlzMxTdx7f9ZlK-684vbBBrlKxRx3l6yKWGkuKEiiU19t9szlGkh1i3FwDbkw1qdOdOxj6XilNg7zm1D--TXrH_4oz7orcAge09"
+    }
+    """
+    
+    static let credentialAccessTokenResponseJSON = """
+    {
+      "expires_in" : 299,
+      "scope" : "credential",
+      "token_type" : "Bearer",
+      "access_token" : "eyJraWQiOiI1NmI1YjZmYi03N2JhLTRmY2QtODVlZi0yMjc3ZTA0MWI5ZDgiLCJhbGciOiJSUzI1NiJ9.eyJzdWIiOiI4UGZDQVF6VG1PTitGSER2SDRHVy9nK0pVdGc1ZVZUZ3RxTUtaRmRCLytjPSIsIm51bVNpZ25hdHVyZXMiOjEsImlzcyI6Imh0dHBzOi8vd2FsbGV0Y2VudHJpYy5zaWduZXIuZXVkaXcuZGV2IiwiaGFzaEFsZ29yaXRobU9JRCI6IjIuMTYuODQwLjEuMTAxLjMuNC4yLjEiLCJhdWQiOiJ3YWxsZXQtY2xpZW50IiwibmJmIjoxNzUzNDkwNTY5LCJzY29wZSI6WyJjcmVkZW50aWFsIl0sImhhc2hlcyI6ImxWMFhhUndadml0a2d4cFI2V1NhcWQ2eUxLOWdjV0ZxWGw0SmVQMVRJekwvUGRwcGFRMExzYzRjOTc5TmI1Z1B1bkVMd2pqWndmeVJ2OXhXMGtNbi9BPT0iLCJjcmVkZW50aWFsSUQiOiI2NjJlOTJlZC1jYmViLTRkNGYtOWE0Ni04ZmM0ZGYzY2VhODUiLCJleHAiOjE3NTM0OTA4NjksImlhdCI6MTc1MzQ5MDU2OSwianRpIjoiMzhmYzJjZjQtMThiNi00MDAzLWEyMWMtYzY2MjQzZjYzNTM2In0.XSfeM-YorMvsrAYuMS10X_faoTvIJtF9iY3ATDqp2uVKwhr7aqofu-7dCyIQ0GlH1-chhEkevlZPe7ZEXD18ROfcoMrExQyxtdmL2XLj1xQJFdV8CKq_Zu9HxYDSyDGFQS21lGr3eOJXVEmtpDPkR_UyRVoMTlOOSP0MLtRTU0kCfut-JXdMX1rQpJpUHyorMBECJP8YinEFPmaAWOaSNqf1p1jMoiU1RlwuvsKgzj07DJ6nQ5PxVbuUVgTL5mjp7z6KByNhN7Edxj3AXtM2UP7khAqk4s7wv9rCdgicLCtNqAWtfoCDmbfEUneKRe0ys_JOnx4hQqIO2v4VdOwN-Q"
+    }
+    """
+    
+    static let oAuth2ErrorResponseJSON = """
+    {
+      "error" : "invalid_grant",
+      "error_description" : "The provided authorization grant is invalid, expired, revoked, does not match the redirection URI used in the authorization request, or was issued to another client."
+    }
+    """
+    
+    static let invalidJSONResponse = """
+    {
+      "invalid": "json",
+      "missing_required_fields": true
+    }
+    """
+
+    static let serviceAccessTokenRequest = AccessTokenRequest(
+        code: "XpOL_9gBQ4OczsEPvEL2atWb64WdvA_pCladM5ergCfegJD3RRXnqpqOBMCKNQ-RAAuoeynkSn6jE_fwFY5res9QmZJIC39z_k4G3-ZoIyJ2VZ13uPhQbJnoH4u_3DV0",
+        state: "BB94593E-79FF-4BBE-8549-1A20E9D99677",
+        authorizationDetails: nil
+    )
+    
+    static let credentialAccessTokenRequest = AccessTokenRequest(
+        code: "TjTlT5hNRGoIRgbiAklj8cK3bCwbhOlzMxTdx7f9ZlK-684vbBBrlKxRx3l6yKWGkuKEiiU19t9szlGkh1i3FwDbkw1qdOdOxj6XilNg7zm1D--TXrH_4oz7orcAge09",
+        state: "BB94593E-79FF-4BBE-8549-1A20E9D99677",
+        authorizationDetails: "[{\"locations\":[],\"hashAlgorithmOID\":\"2.16.840.1.101.3.4.2.1\",\"credentialID\":\"662e92ed-cbeb-4d4f-9a46-8fc4df3cea85\",\"documentDigests\":[{\"hash\":\"lV0XaRwZvitkgxpR6WSaqd6yLK9gcWFqXl4JeP1TIzL%2FPdppaQ0Lsc4c979Nb5gPunELwjjZwfyRv9xW0kMn%2FA%3D%3D\",\"label\":\"A sample1 pdf\"}],\"type\":\"credential\"}]"
+    )
+    
+    static let testCSCClientConfig = CSCClientConfig(
+        OAuth2Client: CSCClientConfig.OAuth2Client(
+            clientId: "wallet-client",
+            clientSecret: "somesecret2"
+        ),
+        authFlowRedirectionURI: "https://walletcentric.signer.eudiw.dev/tester/oauth/login/code",
+        rsspId: "https://walletcentric.signer.eudiw.dev/csc/v2",
+        tsaUrl: "https://timestamp.sectigo.com/qualified"
+    )
+    
+    static let testIssuerURL = "https://walletcentric.signer.eudiw.dev"
+
+    static let testCodeVerifier = "dBjftJeZ4CVP-mB92K27uhbUJU1p1r_wW1gFWFOEjXk"
+    static let testCodeChallenge = "E9Melhoa2OwvFrEMTJguCHaoeK1t8URWbuGJSstw-cM"
+
+    static let adesB_B_Document = CalculateHashRequest.Document(
+        documentInputPath: "Documents/ades-b-b.pdf",
+        documentOutputPath: "Documents/ades-b-b-signed.pdf",
+        signatureFormat: SignatureFormat.P,
+        conformanceLevel: ConformanceLevel.ADES_B_B,
+        signedEnvelopeProperty: SignedEnvelopeProperty.ENVELOPED,
+        container: "No"
+    )
+    
+    static let adesB_T_Document = CalculateHashRequest.Document(
+        documentInputPath: "Documents/ades-b-t.pdf",
+        documentOutputPath: "Documents/ades-b-t-signed.pdf",
+        signatureFormat: SignatureFormat.P,
+        conformanceLevel: ConformanceLevel.ADES_B_T,
+        signedEnvelopeProperty: SignedEnvelopeProperty.ENVELOPED,
+        container: "No"
+    )
+    
+    static let adesB_LT_Document = CalculateHashRequest.Document(
+        documentInputPath: "Documents/ades-b-lt.pdf",
+        documentOutputPath: "Documents/ades-b-lt-signed.pdf",
+        signatureFormat: SignatureFormat.P,
+        conformanceLevel: ConformanceLevel.ADES_B_LT,
+        signedEnvelopeProperty: SignedEnvelopeProperty.ENVELOPED,
+        container: "No"
+    )
+    
+    static let adesB_LTA_Document = CalculateHashRequest.Document(
+        documentInputPath: "Documents/ades-b-lta.pdf",
+        documentOutputPath: "Documents/ades-b-lta-signed.pdf",
+        signatureFormat: SignatureFormat.P,
+        conformanceLevel: ConformanceLevel.ADES_B_LTA,
+        signedEnvelopeProperty: SignedEnvelopeProperty.ENVELOPED,
+        container: "No"
+    )
+    
+    static let mixedConformanceLevelDocuments = [adesB_T_Document, adesB_LT_Document]
+    
+    static let validTsaUrl = "https://timestamp.authority.com/tsa"
+    static let emptyTsaUrl = ""
+    
+    static let sampleSignatures = [
+        "MEUCIQCldUS00il6qjIez47FWa2mJONabr0ydhC9emMlDeYfWAIgY7bVx7LuGDVSc3E//NSC+pI9atPS8MwXRRfL1Qk3TcU=",
+        "MEQCIFZkJ2lq8yB3eF2gK8rN5pH7qT9vMzXwL4aE1cR6sD8pAiBO3mY8kF9sL2pQ7jH6vR9eN1sA3xC8zT4yW1qE5dF9gQ==",
+        "MEYCIQDRtL8nP9sF7mK6xQ2vE1hJ8sT4aA9cB6eL3kN7wP1sF2gIhAOz5yR8qN7mL4pE6dC9sA1vT3xF8kB2eL9wN4sP7qM="
+    ]
+
+    static let mockEndCertificate = "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNtRENDQWgrZ0F3SUJBZ0lVSUdZdHpjczlJQlhndUI5UDByaXV6OGwrM05nd0NnWUlLb1pJemowRUF3SXcKWERFZU1Cd0dBMVVFQXd3VlVFbEVJRWx6YzNWbGNpQkRRU0FnTFNCVlZEQXhNUzB3S3dZRFZRUUtEQ1JGVlVScApJRmRoYkd4bGRDQlNaV1psY21WdVkyVWdTVzF3YkdWdFpXNTBZWFJwYjI0eEN6QUpCZ05WQkFZVEFsVlVNQjRYCkRUSTFNRE15TVRJeU1EVXhNMW9YRFRJM01ETXlNVEl5TURVeE1sb3dWVEVkTUJzR0ExVUVBd3dVUm1seWMzUk8KWVcxbElGUmxjM1JsY2xWelpYSXhFekFSQmdOVkJBUU1DbFJsYzNSbGNsVnpaWEl4RWpBUUJnTlZCQ29NQ1VacApjbk4wVG1GdFpURUxNQWtHQTFVRUJoTUNSa013V1RBVEJnY3Foa2pPUFFJQkJnZ3Foa2pPUFFNQkJ3TkNBQVRLCmZ6MzIyazY2cW8wNzhUbE91ajdEbkNJeXNMSDRMdXEvcUpYTlh0bFM1V3ZHT1ZOSWM5NWJsSy9YUklneDgvUTAKU1lIclh3dW1ET2FKeEtaenMyMjJvNEhGTUlIQ01Bd0dBMVVkRXdFQi93UUNNQUF3SHdZRFZSMGpCQmd3Rm9BVQpzMnk0a1JjYzE2UWFaakdIUXVHTHdFRE1sUnN3SFFZRFZSMEZCQLL3VUFZSUt3WUJCUVVIQXdJR0NDc0dBUVVGCkJ3TUVNRnkDVlNSMGZRVUkvF1UNOWpBNk1EaUFOcUEwakpKb2RIUndjem9zTDNCeVpYQnliMlF1Y0d0cExtVjEKWkdsd2RDNW5aWGQyZEhzKlBjVTFuSWpWL1FEQUFOc1U2VE1BZVVONzVuOU0LCG1yVXJGW2o2Vlh2bk0KLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQ=="
+    
+    static let mockChainCertificates = [
+        "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURIVENDQXFPZnl8E2FvUw0RjTE1VXFqZ3RKcWY0aFVZSmtxZFlqaSswNTJaVENnWWJLb1pJemowRUF3TXcKWERFZU1Cd0dBMVVBd2k5VU9VbEIKa2YbEZkVzNWOERJTElWeDOxQ2tSUUJ6UFp0ZTE0dmMwV1ZVbUy4U2VJCkIyQklCS2Jua3ZpZGZnUFhEYzB2RTZMdUowRjJvbWgrbFlNNyFrYmNvQ3MnbfQUSUpCQWdHQTFVTFdEbJCa28dJbGhuTGh3LEtBR3Q4RmdBVlJqRE2fT2kvOGdKQ3JnVWZPeQ==",
+        "LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSUNDVENhVnNRUUFBQUcxVUE3bE1MQUFBUWJSS3NiZzhVSE9xb2hrako2ZnAwTnlrU3ZJbm1yZDR6ekNuV3MKdyFVaXZydk1kV3UwbGxuWRzUnRhMHBzRVFLdGE3VjJmdTlBRkdZODVvVDcycTZ4cy9yOGkxOVZNWWd3VGdZCklLb2I0d1WfC0dBMVJoTHZCcUFJaHNWZjNEZVpsQjhWaUV1VlVFeGFjZUJLUnpOQ2JvG3UjVXNNK3E2WUlxbgppNGQ0WE0rSUtXM3hFa3NVZzJRNHg1dmNaYVlmSVJJaSUxVG9kZHoRVxk1WVFJVjVINDBHbVhLVGg8LzJkRjBfCnZXNVNWbnpGdEJ2cVVTVWhTUk42cFEzaHNGM3F5RVFWL3ViYXVybm5zeU5ySWpGK3Z5M19ldCtIenFsL3VGR1SdtI0hU1FG=",
+        "LS0tLS1CRUfVJCSUZJQ0FURS0tLS0tCk1JSURDQUVVQXdJQkFnTVFRR0UcCORJTkRBZ0VJZ0J4QUFEQThBSkxRVE5EMFnONW5VGEgD3VVV7MEcEZXlNSTdyeU1FS1VaT0NjZVpsVXl3Q0NySENIZjJ6SXBJQ3hxaUVsREZSaXQxSUd1alQ="
+    ]
+    
+    static let mockTimestampResponse = "dGVzdC10aW1lc3RhbXAtcmVzcG9uc2UtYmFzZTY0LWVuY29kZWQ="
+    
+    static let mockCrlUrls = [
+        "https://example.com/crl1.crl",
+        "https://example.com/crl2.crl"
+    ]
+    
+    static let mockCrlBase64Responses = [
+        "Q1JMMSBiYXNlNjQgZW5jb2RlZCBkYXRh",
+        "Q1JMMiBiYXNlNjQgZW5jb2RlZCBkYXRh"
+    ]
+    
+    static let mockHashForTimestamp = "abc123def456789"
+
+    static let allConformanceLevelDocuments = [
+        adesB_B_Document,
+        adesB_T_Document, 
+        adesB_LT_Document,
+        adesB_LTA_Document
+    ]
+    
+    static let onlyAdesB_B_Documents = [
+        adesB_B_Document,
+        CalculateHashRequest.Document(
+            documentInputPath: "Documents/another-ades-b-b.pdf",
+            documentOutputPath: "Documents/another-ades-b-b-signed.pdf",
+            signatureFormat: SignatureFormat.P,
+            conformanceLevel: ConformanceLevel.ADES_B_B,
+            signedEnvelopeProperty: SignedEnvelopeProperty.ENVELOPED,
+            container: "No"
+        )
+    ]
+    
+    static let onlyTsaRequiredDocuments = [adesB_T_Document, adesB_LT_Document, adesB_LTA_Document]
 } 

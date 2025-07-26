@@ -30,8 +30,6 @@ final class PKCETests: XCTestCase {
         super.tearDown()
     }
 
-    // MARK: - PKCEManager Tests
-
     func testGenerateCodeVerifier_IsAlwaysCorrectLength() async {
         for _ in 0..<100 {
             let verifier = await pkceManager.generateCodeVerifier()
@@ -66,10 +64,7 @@ final class PKCETests: XCTestCase {
         XCTAssertFalse(challenge.contains("/"), "URL-safe Base64 should not contain '/'")
         XCTAssertFalse(challenge.contains("="), "URL-safe Base64 should not contain '=' padding")
     }
-    
-    // MARK: - PKCEState Tests
-    
-    // Test that a new challenge and verifier are generated each time
+
     func testInitializeAndGetCodeChallenge_ResetsAndGeneratesNewState() async throws {
         let pkceState = PKCEState.shared
         
@@ -86,8 +81,7 @@ final class PKCETests: XCTestCase {
         XCTAssertNotEqual(verifier1, verifier2, "A new verifier should be generated on each initialization.")
         XCTAssertNotEqual(challenge1, challenge2, "A new challenge should be generated on each initialization.")
     }
-    
-    // Test that the generated challenge corresponds to the stored verifier
+
     func testInitializeAndGetCodeChallenge_ProducesValidChallenge() async throws {
         let pkceState = PKCEState.shared
         
@@ -106,7 +100,6 @@ final class PKCETests: XCTestCase {
     
     func testGetVerifier_ReturnsInitialStateAsNil() async {
         let pkceState = PKCEState.shared
-        // Ensure state is clean before test
         await pkceState.reset()
         
         let verifier = await pkceState.getVerifier()
@@ -117,17 +110,14 @@ final class PKCETests: XCTestCase {
         let state1 = PKCEState.shared
         let state2 = PKCEState.shared
 
-        // Initialize state via one reference
         _ = try await state1.initializeAndGetCodeChallenge()
         let verifier1 = await state1.getVerifier()
 
-        // Access state via another reference
         let verifier2 = await state2.getVerifier()
 
         XCTAssertNotNil(verifier1)
         XCTAssertEqual(verifier1, verifier2, "Both references should point to the same instance and share the same verifier state.")
 
-        // Reset via the second reference
         await state2.reset()
         let verifierAfterReset = await state1.getVerifier()
         XCTAssertNil(verifierAfterReset, "Resetting via one reference should clear the state for all references.")
