@@ -119,21 +119,21 @@ internal struct QueryHelper {
   }
 
   func parseUnsecured() throws -> UnvalidatedRequestObject {
-    let clientMetaData = json("client_metadata")?.dictionaryObject?.toJSONString() ?? json("client_metadata")?.string
-    return .init(
-//      responseType: string("response_type"),
-//      responseUri: string(Constants.RESPONSE_URI),
-//      redirectUri: string("redirect_uri"),
-//      dcqlQuery: json(Constants.DCQL_QUERY),
-//      clientMetaData: clientMetaData,
-//      clientId: string("client_id"),
-//      nonce: string("nonce"),
-//      scope: string("scope"),
-//      responseMode: string("response_mode"),
-//      state: string("state"),
-//      transactionData: jsonArray(Constants.TRANSACTION_DATA),
-//      verifierInfo: jsonArrayObject(Constants.VERIFIER_INFO)
-    )
+      return .init(
+        responseType: string("response_type"),
+        clientId: string("client_id"),
+        clientIdScheme: string("client_id_scheme"),
+        responseMode: string("response_mode"),
+        responseUri: string("response_uri"),
+        requestUri: string("request_uri"),
+        nonce: string("nonce"),
+        state: string("state"),
+        signatureQualifier: string("signatureQualifier"),
+        documentDigests: jsonArrayObject("documentDigests")?.compactMap { .init(json: $0) },
+        documentLocations: jsonArrayObject("documentLocations")?.compactMap { .init(json: $0) },
+        hashAlgorithmOID: string("hashAlgorithmOID"),
+        clientData: string("clientData")
+      )
   }
 
   internal func jsonString(from dictionary: [String: Any]?) -> String? {
