@@ -60,6 +60,18 @@ public protocol Posting: Sendable {
    - Returns: A Result type with a success boolean (based on status code) or an error.
    */
   func check(key: String, request: URLRequest) async -> Result<(String, Bool), PostError>
+    
+
+  /**
+   Performs a POST request with the provided URLRequest.
+ 
+   - Parameters:
+   - request: The Request to be used for the POST request.
+ 
+   - Returns: A Result type with a success with data or an error.
+   */
+  func send<R: RequestProtocol>(_ request: R) async -> Result<(Data, HTTPURLResponse), PostError>
+
 }
 
 public struct Poster: Posting {
@@ -144,6 +156,21 @@ public struct Poster: Posting {
       return .failure(.networkError(error))
     }
   }
+
+  public func send<R: RequestProtocol>(_ request: R) async -> Result<(Data, HTTPURLResponse), PostError> {
+      do {
+        let urlRequest = try URLRequestBuilder().build(request)
+        let (data, response) = try await session.data(for: urlRequest)
+        guard let http = response as? HTTPURLResponse else {
+          return .failure(.invalidResponse)
+        }
+        return .success((data, http))
+      } catch let e as PostError {
+        return .failure(e)
+      } catch {
+        return .failure(.networkError(error))
+      }
+    }
 }
 
 private extension Poster {

@@ -15,6 +15,20 @@
  */
 import Foundation
 
+struct DirectPostHTTP: RequestProtocol {
+    typealias Response = EmptyResponse
+    
+    let url: URL
+    let method: HttpMethod = .post
+    let headers: [HTTPHeader] = []
+    let body: RequestBody
+    
+    init(url: URL, parameters: [String: String]) {
+        self.url = url
+        self.body = .formURLEncoded(parameters, encoding: .ascii)
+    }
+}
+
 public protocol Dispatching: Sendable {
     func dispatch(poster: Posting, reslovedData: ResolvedRequestData, consent: Consent) async throws -> DispatchOutcome
 }
@@ -35,27 +49,21 @@ public actor Dispatcher: Dispatching {
     ) async throws -> DispatchOutcome {
         
         let (responseURL, payload) = try makeResponse(reslovedData: reslovedData, consent: consent)
-        
         let parameters = DirectPostForm.parameters(of: payload)
         
-        var request = URLRequest(url: responseURL)
-        request.httpMethod = "POST"
-        request.setValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
-        request.httpBody = FormData.encode(parameters: parameters)
+        let req = DirectPostHTTP(url: responseURL, parameters: parameters)
         
-        do {
-            let (data, response) = try await poster.session.data(for: request)
-            let statusCode = (response as? HTTPURLResponse)?.statusCode ?? 0
-            
-            if statusCode == 200 {
-                let redirectURL = Self.extractRedirectURI(from: data)
-                return .accepted(redirectURI: redirectURL)
+        switch await poster.send(req) {
+        case .success((let data, let http)):
+            if http.statusCode == 200 {
+                return .accepted(redirectURI: Self.extractRedirectURI(from: data))
             } else {
                 let body = String(data: data, encoding: .utf8) ?? ""
-                return .rejected(reason: "HTTP \(statusCode). \(body)")
+                return .rejected(reason: "HTTP \(http.statusCode). \(body)")
             }
-        } catch {
-            return .rejected(reason: "Network error: \(error.localizedDescription)")
+            
+        case .failure(let err):
+            return .rejected(reason: err.localizedDescription)
         }
     }
     
@@ -131,52 +139,51 @@ internal enum DirectPostForm {
     
     static func parameters(of payload: AuthorizationResponsePayload) -> [String: String] {
         switch payload {
-
+            
         case .success(let docs, let sigs, let state):
             var dict: [String: String] = [:]
-
+            
             if let docs {
                 dict[documentWithSignature] = docs.asJSONParam()
             }
-
+            
             if let sigs {
                 dict[signatureObject] = sigs.asJSONParam()
             }
-
+            
             if let state {
                 dict[stateFormParam] = state
             }
-
+            
             return dict
-
+            
         case .invalidRequest(let error, let state):
             var dict: [String: String] = [:]
-
+            
             let code = AuthorizationRequestErrorCode.fromError(error)?.code ?? error
             dict[errorFormParam] = code
-
+            
             if let state {
                 dict[stateFormParam] = state
             }
-
+            
             return dict
-
+            
         case .noConsensusResponseData(let state):
             var dict: [String: String] = [:]
-
+            
             dict[errorFormParam] = AuthorizationRequestErrorCode.userCancelled.code
-
+            
             if let state {
                 dict[stateFormParam] = state
             }
-
+            
             return dict
         }
     }
-
+    
 }
 
-// Kotlin: List<String>.asParam() -> JSON array string
 internal extension Array where Element == String {
     func asJSONParam() -> String {
         guard let data = try? JSONSerialization.data(withJSONObject: self, options: []),
@@ -188,7 +195,7 @@ internal extension Array where Element == String {
 
 internal enum FormData {
     
-    /// Encodes parameters as `application/x-www-form-urlencoded` using US-ASCII bytes (like your Kotlin FormData).
+    /// Encodes parameters as `application/x-www-form-urlencoded`
     static func encode(parameters: [String: String]) -> Data {
         let encoded = parameters
             .map { key, value in
