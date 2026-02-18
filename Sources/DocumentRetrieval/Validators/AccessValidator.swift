@@ -130,27 +130,26 @@ public actor AccessValidator: AccessValidating {
     let publicKey = leafCertificate.publicKey
     let pem = try publicKey.serializeAsPEM().pemString
 
-//    guard let signingAlgorithm = jws.header.algorithm else {
-//      throw ValidationError.validationError("JWS header does not contain algorith field")
-//    }
-//
-//    if let secKey = KeyController.convertPEMToPublicKey(pem, algorithm: signingAlgorithm) {
-//      let joseController = JOSEController()
-//      let verified = (try? joseController.verify(
-//        jws: jws,
-//        publicKey: secKey,
-//        algorithm: signingAlgorithm
-//      )) ?? false
-//
-//      if !verified {
-//        throw ValidationError.validationError("Unable to verify signature using public key from leaf certificate")
-//      }
-//
-//    } else {
-//      throw ValidationError.validationError("Unable to decode public key from leaf certificate")
-//    }
-  }
+    guard let signingAlgorithm = jws.header.algorithm else {
+      throw ValidationError.validationError("JWS header does not contain algorith field")
+    }
 
+      if let secKey = JWSPublicKeyVerifier.convertPEMToPublicKey(pem, algorithm: signingAlgorithm) {
+          let verified = (try? JWSPublicKeyVerifier.verify(
+        jws: jws,
+        publicKey: secKey,
+        algorithm: signingAlgorithm
+      )) ?? false
+
+      if !verified {
+        throw ValidationError.validationError("Unable to verify signature using public key from leaf certificate")
+      }
+
+    } else {
+      throw ValidationError.validationError("Unable to decode public key from leaf certificate")
+    }
+  }
+    
   private func validatePreregistered(
     supportedClientIdScheme: SupportedClientIdPrefix?,
     clientId: String,

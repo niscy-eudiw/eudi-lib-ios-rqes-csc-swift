@@ -1,6 +1,15 @@
 {
-  "originHash" : "08b3480a4740571b294345d7b97034b0ba3dc6489c7076ea0cfcc6a0066cce1c",
+  "originHash" : "d86baadbddf2eeac75891f0ae1de1512ed105e7b22e0ad27241e89924698ce22",
   "pins" : [
+    {
+      "identity" : "blueecc",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/niscy-eudiw/BlueECC.git",
+      "state" : {
+        "revision" : "15e525cfff2da9b7429285346248e2c67ba0bd12",
+        "version" : "1.2.4"
+      }
+    },
     {
       "identity" : "eudi-lib-podofo",
       "kind" : "remoteSourceControl",
