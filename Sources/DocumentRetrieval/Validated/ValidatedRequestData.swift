@@ -40,6 +40,7 @@ extension ValidatedRequestData {
     let clientId: String
     let client: Client
     let nonce: String
+    let responseUri: String?
     let responseMode: ResponseMode?
     let state: String?
     let signatureQualifier: String?
@@ -52,6 +53,7 @@ extension ValidatedRequestData {
       clientId: String,
       client: Client,
       nonce: String,
+      responseUri: String?,
       responseMode: ResponseMode?,
       state: String?,
       signatureQualifier: String?,
@@ -63,6 +65,7 @@ extension ValidatedRequestData {
       self.clientId = clientId
       self.client = client
       self.nonce = nonce
+      self.responseUri = responseUri
       self.responseMode = responseMode
       self.state = state
       self.signatureQualifier = signatureQualifier

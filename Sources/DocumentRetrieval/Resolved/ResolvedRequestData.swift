@@ -19,6 +19,7 @@ import SwiftyJSON
 public struct ResolvedRequestData: Sendable {
     public let client: Client
     public let nonce: String
+    public let responseUri: URL?
     public let responseMode: ResponseMode?
     public let state: String?
     public let signatureQualifier: String?
@@ -31,6 +32,7 @@ public struct ResolvedRequestData: Sendable {
       client: Client,
       nonce: String,
       responseMode: ResponseMode?,
+      responseUri: URL?,
       state: String?,
       signatureQualifier: String?,
       documentDigests: [DocumentDigest]?,
@@ -40,6 +42,7 @@ public struct ResolvedRequestData: Sendable {
     ) {
       self.client = client
       self.nonce = nonce
+      self.responseUri = responseUri
       self.responseMode = responseMode
       self.state = state
       self.signatureQualifier = signatureQualifier
@@ -58,10 +61,18 @@ public extension ResolvedRequestData {
     validatedAuthorizationRequest: ValidatedRequestData
   ) async throws {
 
+    guard
+        let uri = validatedAuthorizationRequest.request.responseUri,
+        let responseUri = URL(string: uri)
+    else {
+        throw ValidationError.validationError("Invalid response uri")
+    }
+      
     self = .init(
         client: validatedAuthorizationRequest.request.client,
         nonce: validatedAuthorizationRequest.request.nonce,
         responseMode: validatedAuthorizationRequest.request.responseMode,
+        responseUri: responseUri,
         state: validatedAuthorizationRequest.request.state,
         signatureQualifier: validatedAuthorizationRequest.request.signatureQualifier,
         documentDigests: validatedAuthorizationRequest.request.documentDigests,

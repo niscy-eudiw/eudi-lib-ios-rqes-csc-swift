@@ -124,6 +124,7 @@ internal actor RequestAuthenticator {
             clientId: clientId,
             client: client,
             nonce: nonce,
+            responseUri: requestObject.responseUri,
             responseMode: try requestObject.validResponseMode(),
             state: requestObject.state,
             signatureQualifier: requestObject.signatureQualifier,
