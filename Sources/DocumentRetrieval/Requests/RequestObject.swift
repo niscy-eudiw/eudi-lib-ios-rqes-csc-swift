@@ -20,7 +20,7 @@ import Foundation
  *
  * https://openid.net/specs/openid-4-verifiable-presentations-1_0.html#name-authorization-request
  */
-public struct UnvalidatedRequestObject: Codable, Sendable {
+public struct RequestObject: Codable, Sendable {
     public let responseType: String?
     public let clientId: String?
     public let clientIdScheme: String?
@@ -128,7 +128,7 @@ public struct UnvalidatedRequestObject: Codable, Sendable {
   }
 }
 
-public extension UnvalidatedRequestObject {
+public extension RequestObject {
   init?(from url: URL) {
     let parameters = url.queryParameters
 

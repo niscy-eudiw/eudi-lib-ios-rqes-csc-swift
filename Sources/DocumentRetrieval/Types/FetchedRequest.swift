@@ -16,6 +16,6 @@
 import Foundation
 
 internal enum FetchedRequest: Sendable {
-  case plain(requestObject: UnvalidatedRequestObject)
+  case plain(requestObject: RequestObject)
   case jwtSecured(clientId: String, jwt: JWTString)
 }

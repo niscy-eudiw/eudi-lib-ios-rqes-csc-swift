@@ -39,10 +39,7 @@ extension ClientIdPrefix {
       scheme == OpenId4VPSpec.clientIdSchemeRedirectUri ||
       scheme == OpenId4VPSpec.clientIdSchemePreRegistered ||
       scheme == OpenId4VPSpec.clientIdSchemeX509SanDns ||
-      scheme == OpenId4VPSpec.clientIdSchemeX509Hash ||
-      scheme == OpenId4VPSpec.clientIdSchemeDid ||
-      scheme == OpenId4VPSpec.clientIdSchemeOpenidFederation ||
-      scheme == OpenId4VPSpec.clientIdSchemeVerifierAttestation,
+      scheme == OpenId4VPSpec.clientIdSchemeX509Hash,
       let clientIdScheme = ClientIdPrefix(rawValue: scheme)
     else {
       throw ValidationError.unsupportedClientIdScheme(scheme)
@@ -54,7 +51,7 @@ extension ClientIdPrefix {
   /// Initializes a `ClientIdScheme` based on the authorization request data.
   /// - Parameter authorizationRequestData: The authorization request data.
   /// - Throws: An error if the client ID scheme is unsupported.
-  init(authorizationRequestData: UnvalidatedRequestObject) throws {
+  init(authorizationRequestData: RequestObject) throws {
     guard
       authorizationRequestData.clientIdScheme == OpenId4VPSpec.clientIdSchemePreRegistered,
       let clientIdScheme = ClientIdPrefix(rawValue: authorizationRequestData.clientIdScheme ?? "")
@@ -75,16 +72,10 @@ extension ClientIdPrefix {
       self = .preRegistered
     case OpenId4VPSpec.clientIdSchemeRedirectUri:
       self = .redirectUri
-    case OpenId4VPSpec.clientIdSchemeOpenidFederation:
-      self = .openidFederation
-    case OpenId4VPSpec.clientIdSchemeDid:
-      self = .decentralizedIdentifier
     case OpenId4VPSpec.clientIdSchemeX509SanDns:
       self = .x509SanDns
     case OpenId4VPSpec.clientIdSchemeX509Hash:
       self = .x509Hash
-    case OpenId4VPSpec.clientIdSchemeVerifierAttestation:
-      self = .verifierAttestation
     default:
       return nil // Return nil if the raw value doesn't match any case
     }

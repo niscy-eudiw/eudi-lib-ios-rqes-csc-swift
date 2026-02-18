@@ -18,7 +18,7 @@ import Security
 import JOSESwift
 import CryptorECC
 
-struct JWSPublicKeyVerifier {
+internal struct JWSPublicKeyVerifier {
 
   static func convertPEMToPublicKey(
     _ pem: String,

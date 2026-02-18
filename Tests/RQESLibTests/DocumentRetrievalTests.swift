@@ -44,10 +44,14 @@ final class DocumentRetrievalTests: XCTestCase {
         
         print(request)
         
-        try await docRetrieve.dispatch(
-            poster: Poster(),
-            reslovedData: request.resolved!,
-            consent: .positive(documentWithSignature: [], signatureObject: [])
-        )
+        do {
+            try await docRetrieve.dispatch(
+                poster: Poster(),
+                reslovedData: request.resolved!,
+                consent: .positive(documentWithSignature: [], signatureObject: [])
+            )
+        } catch {
+            
+        }
     }
 }

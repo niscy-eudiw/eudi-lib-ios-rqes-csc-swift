@@ -18,12 +18,12 @@ import SwiftyJSON
 
 internal struct AuthenticatedRequest: Sendable {
   let client: Client
-  let requestObject: UnvalidatedRequestObject
+  let requestObject: RequestObject
 }
 
 internal struct JWTDecoder {
   
-  static func decodeJWT(_ jwt: String) -> UnvalidatedRequestObject? {
+  static func decodeJWT(_ jwt: String) -> RequestObject? {
     // JWS compact: header.payload.signature (we only need payload)
     let parts = jwt.split(separator: ".", omittingEmptySubsequences: false)
     guard parts.count >= 2 else { return nil }
@@ -38,11 +38,11 @@ internal struct JWTDecoder {
     }
   }
   
-  private static func mapJSONToRequestObject(_ json: JSON) -> UnvalidatedRequestObject {
+  private static func mapJSONToRequestObject(_ json: JSON) -> RequestObject {
     let documentDigests = json["documentDigests"].array
     let documentLocations = json["documentLocations"].array
     
-    return UnvalidatedRequestObject(
+    return RequestObject(
         responseType: json["response_type"].string,
         clientId: json["client_id"].string,
         clientIdScheme: json["client_id_scheme"].string,
@@ -86,7 +86,8 @@ internal actor RequestAuthenticator {
       }
       
       let client = try await clientAuthenticator.authenticate(
-        fetchRequest: fetchRequest
+        fetchRequest: fetchRequest,
+        requestObject: requestObject
       )
         
       try await verify(
@@ -116,7 +117,7 @@ internal actor RequestAuthenticator {
     clientId: String,
     client: Client,
     nonce: String,
-    requestObject: UnvalidatedRequestObject
+    requestObject: RequestObject
   ) throws -> ValidatedRequestData {
     return .init(
         request: .init(

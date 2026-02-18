@@ -19,7 +19,7 @@ import SwiftyJSON
 /// Represents an unvalidated authorization request.
 public enum UnvalidatedRequest: Sendable {
 
-  case plain(UnvalidatedRequestObject)
+  case plain(RequestObject)
   case jwtSecuredPassByValue(
     clientId: String,
     jwt: JWTString
@@ -118,7 +118,7 @@ internal struct QueryHelper {
     }
   }
 
-  func parseUnsecured() throws -> UnvalidatedRequestObject {
+  func parseUnsecured() throws -> RequestObject {
       return .init(
         responseType: string("response_type"),
         clientId: string("client_id"),

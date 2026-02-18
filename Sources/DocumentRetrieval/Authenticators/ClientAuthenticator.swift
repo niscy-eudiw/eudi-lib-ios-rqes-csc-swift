@@ -27,7 +27,10 @@ internal actor ClientAuthenticator {
     self.config = config
   }
   
-  func authenticate(fetchRequest: FetchedRequest) async throws -> Client {
+  func authenticate(
+    fetchRequest: FetchedRequest,
+    requestObject: RequestObject? = nil
+  ) async throws -> Client {
     switch fetchRequest {
     case .plain(let requestObject):
       guard let clientId = requestObject.clientId else {
@@ -38,10 +41,14 @@ internal actor ClientAuthenticator {
         config: config
       )
     case .jwtSecured(let clientId, let jwt):
+      guard let requestObject = requestObject else {
+        throw ValidationError.validationError("requestObject required for .jwtSecured")
+      }
       return try await getClient(
         clientId: clientId,
         jwt: jwt,
-        config: config
+        config: config,
+        requestObject: requestObject
       )
     }
   }
@@ -49,12 +56,9 @@ internal actor ClientAuthenticator {
   func getClient(
     clientId: String?,
     jwt: JWTString,
-    config: DocumentRetrievalConfiguration?
+    config: DocumentRetrievalConfiguration?,
+    requestObject: RequestObject
   ) async throws -> Client {
-    
-    guard let requestObject = JWTDecoder.decodeJWT(jwt) else {
-      throw ValidationError.invalidRequest
-    }
       
     guard let clientId else {
       throw ValidationError.validationError("clientId is missing")

@@ -40,7 +40,7 @@ enum AuthorizationRequest: Sendable {
   }
 }
 
-internal extension UnvalidatedRequestObject {
+internal extension RequestObject {
   func validResponseMode() throws -> ResponseMode {
     return try ResponseMode(authorizationRequestData: self)
   }
